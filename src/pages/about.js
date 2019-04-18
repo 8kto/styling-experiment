@@ -3,9 +3,9 @@ import Layout from "../components/layout"
 
 export default () => (
   <Layout>
-    <h1>Homepage.</h1>
+    <h1>About Page</h1>
     <p>
-        This is homepage.
+        This is an About Page.
     </p>   
   </Layout>
 )
