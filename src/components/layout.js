@@ -28,9 +28,10 @@ export default ({ children, pageTitle }) => {
           site {
             siteMetadata {            
               title
+              description
               navigationItems {
                 path
-                name  
+                name                  
               }
             }
           }
@@ -41,6 +42,7 @@ export default ({ children, pageTitle }) => {
             <Helmet>
               <meta charset="utf-8" />
               <title>{finalPageTitle + data.site.siteMetadata.title}</title>
+              <meta name="description" content={data.site.siteMetadata.description} />
             </Helmet>
             <Logo title={data.site.siteMetadata.title} />
             <Navigation items={data.site.siteMetadata.navigationItems} />      
