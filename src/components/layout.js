@@ -1,15 +1,25 @@
 import React from "react"
-import { Link } from "gatsby"
+import styled from "styled-components"
+
 import Navigation from "./navigation"
+import Logo from "./logo"
+
+const MainWrapper = styled.div`
+  margin: 3rem auto;
+  max-width: 650px;
+  padding: 0 1rem;
+`
+
+const BodyWrapper = styled.div`
+  margin-top: 2rem;
+`
 
 export default ({ children }) => (
-  <div style={{ margin: `3rem auto`, maxWidth: 650, padding: `0 1rem` }}>
-      <Link to="/" style={{ textShadow: `none`, backgroundImage: `none` }}>
-          <h3 style={{ display: `inline` }}>Styling Experiment</h3>
-      </Link>
+  <MainWrapper>
+      <Logo />
       <Navigation />      
-      <div style={{ marginTop: `2rem` }}>
+      <BodyWrapper>
         {children}
-      </div>
-  </div>
+      </BodyWrapper>
+  </MainWrapper>
 )

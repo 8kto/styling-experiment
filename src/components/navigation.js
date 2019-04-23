@@ -12,17 +12,19 @@ const ListItem = styled.li`
   display: inline-block;
   margin-right: 1rem;
   padding: 0.2rem 0.5rem;
-  background: ${ props => !props.isActive ? "white" : "lightblue" };
-  color: ${ props => !props.isActive ? "black" : "darkblue" }; 
+  background: ${ props => !props.isActive ? "white" : "#734C9E" };
+  color: ${ props => !props.isActive ? "black" : "white" }; 
 `
 
 const Container = styled.li`
   list-style: none;
   float: right; 
+  margin-top: 0.87rem;
 `
 
 const StyledLink = styled(Link)`
   color: inherit;
+  text-decoration: none;
 `
 
 const ListLink = props => {
