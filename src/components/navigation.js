@@ -9,9 +9,8 @@ const links = [
 ]
 
 const ListItem = styled.li`
-  display: inline-block;
-  margin-right: 1rem;
-  padding: 0.2rem 0.5rem;
+  display: inline-block;    
+  margin-left: 0.5rem;
   background: ${ props => !props.isActive ? "white" : "#734C9E" };
   color: ${ props => !props.isActive ? "black" : "white" }; 
 `
@@ -19,12 +18,14 @@ const ListItem = styled.li`
 const Container = styled.li`
   list-style: none;
   float: right; 
-  margin-top: 0.87rem;
+  margin-top: 0.75rem;
 `
 
 const StyledLink = styled(Link)`
   color: inherit;
   text-decoration: none;
+  display: inline-block;
+  padding: 0.4rem 0.6rem;
 `
 
 const ListLink = props => {
