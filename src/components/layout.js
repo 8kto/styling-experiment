@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { StaticQuery, graphql } from "gatsby"
 
 import Navigation from "./navigation"
 import Logo from "./logo"
@@ -15,11 +16,28 @@ const BodyWrapper = styled.div`
 `
 
 export default ({ children }) => (
-  <MainWrapper>
-      <Logo />
-      <Navigation />      
-      <BodyWrapper>
-        {children}
-      </BodyWrapper>
-  </MainWrapper>
+  <StaticQuery
+    query={graphql`
+      query {
+        site {
+          siteMetadata {            
+            title
+            navigationItems {
+              path
+              name  
+            }
+          }
+        }
+      }
+    `}
+    render={ data => (
+      <MainWrapper>
+          <Logo title={data.site.siteMetadata.title} />
+          <Navigation items={data.site.siteMetadata.navigationItems} />      
+          <BodyWrapper>
+            {children}
+          </BodyWrapper>
+      </MainWrapper>
+    )}
+  />
 )

@@ -28,11 +28,11 @@ const LogoImage = styled.img`
   float: left;
 `
 
-export default () => (
+export default (props) => (
   <LogoLink to="/">
     <LogoContainer>
       <LogoImage src={logo} />
-      <LogoHeader>Styling Experiment</LogoHeader>
+      <LogoHeader>{props.title}</LogoHeader>
     </LogoContainer>
   </LogoLink>
 )
