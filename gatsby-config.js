@@ -1,3 +1,5 @@
+const creds = require('./client_secret.json')
+
 module.exports = {
   plugins: [
     {
@@ -9,13 +11,15 @@ module.exports = {
     `gatsby-plugin-styled-components`,  
     `gatsby-plugin-react-helmet`,
     {
-      resolve: 'gatsby-source-google-sheets',
+      resolve: "gatsby-source-gs-pages",
       options: {
-        spreadsheetId: '1D01HIhIuF8Yrq6EGCXrfKhRAE4OZWybO3wFdsXRYNO8',
-        worksheetTitle: 'Sheet1',
-        credentials: require('./client_secret.json')
-      }
-    },  
+        creds: creds,
+        sheetId: '1D01HIhIuF8Yrq6EGCXrfKhRAE4OZWybO3wFdsXRYNO8',
+        workSheetName: 'Pages',
+        maxRows: 200,
+        maxCols: 10,
+      },
+    },      
   ],
   siteMetadata: {
     title: `Styling Experiment`,
