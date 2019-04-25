@@ -67,7 +67,7 @@ exports.fetchPagesObject = async function ( { creds, sheetId, workSheetName, max
           res.currentPage.table = {
             headerRow: row,
             header: [ value ], 
-            data: {},               
+            data: [],               
           }              
           res.nextStep = 'complete-header'            
         }
@@ -84,7 +84,7 @@ exports.fetchPagesObject = async function ( { creds, sheetId, workSheetName, max
         // do nothing in header row
         if(row > res.currentPage.table.headerRow) {
           // detect row number
-          const dataRow = `row${row - res.currentPage.table.headerRow - 1}`;
+          const dataRow = row - res.currentPage.table.headerRow - 1;
           // zero column no value?
           if(value == "" && col == 1) {
             // table fetch done. Finalize currentPage             
