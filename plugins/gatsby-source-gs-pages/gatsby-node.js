@@ -1,12 +1,13 @@
 const { fetchPagesObject } = require('./fetch-pages-object.js')
+const slugify = require('slugify')
 
 exports.sourceNodes = (
   { actions, createNodeId, createContentDigest },
   configOptions
 ) => {
   const { createNode } = actions
-
-  const { creds, sheetId, workSheetName, maxRows, maxCols} = configOptions
+  const { credsPath, sheetId, workSheetName, maxRows, maxCols} = configOptions
+  const creds = require.resolve(credsPath)
 
   const processPage = (page, index) => {
     const nodeId = createNodeId(`gs-page-${index}`)
@@ -35,4 +36,28 @@ exports.sourceNodes = (
       createNode(processPage(page, index))      
     })    
   })
+}
+
+
+exports.createPages = async function({graphql, actions}, configOptions) {  
+  const {data} = await graphql(
+    `{
+      allGsPage {
+        edges {
+          node {
+            id
+            title        
+          }
+        }
+      }
+    }`
+  )
+  data.allGsPage.edges.forEach( edge => {
+    const generated_path = `${configOptions.baseUrl}/${slugify(edge.node.title, { lower: true })}`
+    actions.createPage({
+      path: generated_path,
+      component: require.resolve(configOptions.templatePath), 
+      context: { gsId: edge.node.id }
+    })
+  })     
 }
