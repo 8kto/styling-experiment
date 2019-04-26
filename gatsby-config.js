@@ -26,8 +26,7 @@ module.exports = {
     description: `Blazing fast styling example playground`,
     navigationItems: [
       { path: "/", name: "Home" },
-      { path: "/about/", name: "About Us" },
-      { path: "/table/", name: "Temperatures" },
+      { path: "/about/", name: "About Us" },       
     ]
   },
 }
