@@ -27,6 +27,6 @@ module.exports = {
     navigationItems: [
       { path: "/", name: "Home" },
       { path: "/about/", name: "About Us" },       
-    ]
+    ],
   },
 }
