@@ -20,7 +20,8 @@ exports.sourceNodes = (
         type: `GSPage`,
         content: nodeContent,
         contentDigest: createContentDigest(page),
-      }  
+      },
+      url: slugify(page.title, { lower: true }),
     })
     return nodeData
   }
@@ -46,14 +47,15 @@ exports.createPages = async function({graphql, actions}, configOptions) {
         edges {
           node {
             id
-            title        
+            title
+            url        
           }
         }
       }
     }`
   )
   data.allGsPage.edges.forEach( edge => {
-    const generated_path = `${configOptions.baseUrl}/${slugify(edge.node.title, { lower: true })}`
+    const generated_path = `${configOptions.baseUrl}/${edge.node.url}`
     actions.createPage({
       path: generated_path,
       component: require.resolve(configOptions.templatePath), 
