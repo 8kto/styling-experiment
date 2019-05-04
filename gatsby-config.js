@@ -11,7 +11,7 @@ module.exports = {
     {
       resolve: "gatsby-source-gs-pages",
       options: {
-        sheetId: '1D01HIhIuF8Yrq6EGCXrfKhRAE4OZWybO3wFdsXRYNO8',
+        sheetId: '11ziMHrafjFaY9ACiacW9H3SlERUTqsKcujvF1oV0npE',
         workSheetName: 'Pages',
         maxRows: 200,
         maxCols: 10,
