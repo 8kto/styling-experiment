@@ -3,6 +3,8 @@ import { Link } from "gatsby"
 import { Match } from "@reach/router"
 import styled from "styled-components"
 
+import './navigation.scss'
+
 const ListItem = styled.li`
   display: inline-block;    
   margin-left: 0.5rem;
@@ -28,7 +30,7 @@ const ListLink = props => {
   return (
     <Match path={pathTo}>
       { props => (
-        <ListItem isActive={props.match}>
+        <ListItem isActive={props.match} className="Link">
           <StyledLink to={pathTo}>{children}</StyledLink>
         </ListItem> 
       )}       
@@ -37,7 +39,7 @@ const ListLink = props => {
 }
 
 export default (props) => (
-  <Container>
+  <Container className="Container">
       { props.items.map( (link, index) => { 
         return <ListLink key={index} to={link.path}>{link.name}</ListLink>
       })}
