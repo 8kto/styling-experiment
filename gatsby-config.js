@@ -20,7 +20,7 @@ module.exports = {
                 baseUrl      : `gs-pages`,
             },
         },
-        // `gatsby-plugin-sass`
+        `gatsby-plugin-sass`
     ],
     siteMetadata: {
         title          : `Styling Experiment`,
