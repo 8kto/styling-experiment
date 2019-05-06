@@ -1,15 +1,15 @@
-import * as React from "react"
-import { Link } from "gatsby"
-import { Match } from "@reach/router"
-import styled from "styled-components"
+import * as React from 'react'
+import {Link} from 'gatsby'
+import {Match} from '@reach/router'
+import styled from 'styled-components'
 
 import './navigation.scss'
 
 const ListItem = styled.li`
   display: inline-block;    
   margin-left: 0.5rem;
-  background: ${ props => !props.isActive ? "white" : "#734C9E" };
-  color: ${ props => !props.isActive ? "black" : "white" }; 
+  background: ${props => !props.isActive ? 'white' : '#734C9E'};
+  color: ${props => !props.isActive ? 'black' : 'white'}; 
 `
 
 const Container = styled.li`
@@ -26,22 +26,22 @@ const StyledLink = styled(Link)`
 `
 
 const ListLink = props => {
-  const { to: pathTo, children } = props  
+  const {to: pathTo, children} = props
   return (
     <Match path={pathTo}>
-      { props => (
+      {props => (
         <ListItem isActive={props.match} className="Link">
           <StyledLink to={pathTo}>{children}</StyledLink>
-        </ListItem> 
-      )}       
+        </ListItem>
+      )}
     </Match>
   )
 }
 
 export default (props) => (
   <Container className="Container">
-      { props.items.map( (link, index) => { 
-        return <ListLink key={index} to={link.path}>{link.name}</ListLink>
-      })}
+    {props.items.map((link, index) => {
+      return <ListLink key={index} to={link.path}>{link.name}</ListLink>
+    })}
   </Container>
 )

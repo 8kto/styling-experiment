@@ -8,8 +8,10 @@ class CatHeader extends React.Component<CatHeaderProps> {
   render(): React.ReactNode {
     return (
       <div>
-        <h4>Works</h4>
-        <img src={`https://cataas.com/cat/says/${this.props.title}?color=red&size=50`} />
+        <img
+          src={`https://cataas.com/cat/says/${this.props.title}?color=red&size=50`}
+          alt={this.props.title}
+        />
       </div>
     )
   }

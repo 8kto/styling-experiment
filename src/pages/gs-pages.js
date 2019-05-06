@@ -1,12 +1,10 @@
-import * as React from "react"
-import { Link, graphql } from "gatsby"
-import Layout from "../components/layout"
-import CatHeader from '../components/CatHeader'
+import * as React from 'react'
+import {graphql, Link} from 'gatsby'
+import Layout from '../components/layout'
 
 export default ({ data }) => (
   <Layout pageTitle="Template">
     <h1>List of GS Pages</h1>
-    <CatHeader title="Yaaay!" />
     <p>Choose your desired page.</p>
     <ul>
       {data.allGsPage.edges.map((edge, index) => 

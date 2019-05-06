@@ -10,7 +10,9 @@
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.0",
@@ -32,7 +34,32 @@
     "typography": "^0.16.19"
   },
   "devDependencies": {
-    "prettier": "^1.17.0"
+    "@babel/core": "^7.4.4",
+    "@storybook/addon-actions": "^5.0.11",
+    "@storybook/addon-knobs": "^5.0.11",
+    "@storybook/addon-links": "^5.0.11",
+    "@storybook/addon-options": "^5.0.11",
+    "@storybook/addon-viewport": "^5.0.11",
+    "@storybook/addons": "^5.0.11",
+    "@storybook/react": "^5.0.11",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.8.16",
+    "@types/react-dom": "^16.8.4",
+    "@types/react-helmet": "^5.0.8",
+    "@types/react-redux": "^7.0.8",
+    "@types/storybook__addon-actions": "^3.4.2",
+    "@types/storybook__addon-knobs": "^5.0.0",
+    "@types/storybook__addon-options": "^4.0.1",
+    "@types/storybook__react": "^4.0.1",
+    "babel-loader": "^8.0.5",
+    "prettier": "^1.17.0",
+    "storybook-readme": "^5.0.3",
+    "ts-loader": "^6.0.0",
+    "tslint": "^5.16.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-loader": "^3.5.4",
+    "tslint-plugin-prettier": "^2.0.1",
+    "tslint-react": "^4.0.0"
   },
   "repository": {
     "type": "git",

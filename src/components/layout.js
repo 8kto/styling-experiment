@@ -5,7 +5,7 @@ import {Helmet} from 'react-helmet'
 
 import Navigation from './navigation'
 import Logo from './logo'
-import Header from './Header/Header'
+import CatHeader from './CatHeader/CatHeader'
 
 const MainWrapper = styled.div`
   margin: 3rem auto;
@@ -47,7 +47,7 @@ export default ({children, pageTitle}) => {
         <Logo title={data.site.siteMetadata.title} />
         <Navigation items={data.site.siteMetadata.navigationItems} />
         <BodyWrapper>
-          <Header name={finalPageTitle} tagline="Cool Header" />
+          <CatHeader title={finalPageTitle} />
           {children}
         </BodyWrapper>
       </MainWrapper>
