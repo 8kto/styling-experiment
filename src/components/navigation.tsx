@@ -1,4 +1,4 @@
-import React from "react"
+import * as React from "react"
 import { Link } from "gatsby"
 import { Match } from "@reach/router"
 import styled from "styled-components"
